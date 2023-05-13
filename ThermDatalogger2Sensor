@@ -50,7 +50,7 @@ void setup(void)
   // see if the card is present and can be initialized:
   if (!SD.begin(chipSelect)) {
     Serial.println("Card failed, or not present");
-    // don't do anything more:
+    // don't do anything more (this pauses the code upon powering up until the user is ready to start logging, at which point they can insert the SD card)
     return;
   }
   Serial.println("card initialized.");
